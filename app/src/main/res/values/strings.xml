@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Crescoo Shop</string>
+    <string name="login">Login</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="noSignUp">Not signed up yet? Tap here to Sign Up</string>
+    <string name="next">Next</string>
+    <string name="name">Name</string>
+    <string name="signup">SignUp</string>
+    <string name="occupation">Occupation</string>
+    <string name="sample">Sample</string>
+    <string name="noLogin">Already Signed up? Tap here to Login</string>
+    <string name="moreDet">More Details About You</string>
+    <string name="years_of_experience">Years Of Experience</string>
+    <string name="per_hour">Per Hour</string>
+    <string name="your_pay_info">Your Pay Info</string>
+    <string name="per_day">Per Day</string>
+    <string name="enter_your_otp_here">Enter Your OTP Here</string>
+    <string name="resendOTP">Did not get an OTP yet? Tap here to resend.</string>
+    <string name="home">Home</string>
+    <string name="username">UserName</string>
+    <string name="sampleNumber">+97798xxxxxxxx</string>
+    <string name="samplePerDay">Per Day:</string>
+    <string name="sampleYear">4</string>
+    <string name="textYears">Years of Experience</string>
+    <string name="per_hour_4_20">Per Hour:</string>
+    <string name="_420">420</string>
+    <string name="_69">69</string>
+    <string name="shop_name">Shop Name</string>
+    <string name="shop_location">Shop Location</string>
+    <string name="shop_type">Shop Type</string>
 </resources>
