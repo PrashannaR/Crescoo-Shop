@@ -31,7 +31,7 @@
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="@string/name"
+            android:hint="@string/owner_s_name"
             android:textColorHint="@color/grey"
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxStrokeColor="@color/grey"
@@ -99,12 +99,36 @@
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/franTV">
+
+            <RadioButton
+                android:id="@+id/yesRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/noRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/no" />
+        </RadioGroup>
+
 
         <TextView
             android:id="@+id/tapLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="96dp"
             android:text="@string/noLogin"
             android:textColor="@color/darkGrey"
             app:layout_constraintEnd_toEndOf="parent"
@@ -124,6 +148,18 @@
             app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tapLogin" />
+
+        <TextView
+            android:id="@+id/franTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/is_this_a_franchise_company"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.353"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/locationInputLayout" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

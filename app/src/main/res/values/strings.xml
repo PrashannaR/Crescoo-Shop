@@ -28,4 +28,12 @@
     <string name="shop_name">Shop Name</string>
     <string name="shop_location">Shop Location</string>
     <string name="shop_type">Shop Type</string>
+    <string name="is_this_a_franchise_company">Is this a Franchise Company?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="owner_s_name">Owner\'s Name</string>
+    <string name="sampleText">This is the page where you write about the SastaShark Tank\nthing change this</string>
+    <string name="sampleText2">Do you want to sign up for this?</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="description">Description</string>
 </resources>

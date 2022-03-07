@@ -6,9 +6,11 @@
         <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_login_otp.xml" value="0.25729166666666664" />
         <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_login_phone.xml" value="0.25729166666666664" />
         <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_main.xml" value="0.25729166666666664" />
+        <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_signup_desc.xml" value="0.264" />
         <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_signup_one.xml" value="0.25729166666666664" />
         <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_signup_otp.xml" value="0.25729166666666664" />
-        <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_signup_two.xml" value="0.25729166666666664" />
+        <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/activity_signup_two.xml" value="0.264" />
+        <entry key="..\:/Crescoo/CrescooShop/app/src/main/res/layout/drop_down_list.xml" value="0.25729166666666664" />
       </map>
     </option>
   </component>
