@@ -53,10 +53,28 @@ public class SignupDesc extends AppCompatActivity {
 
                 if (rbValue.equals("Yes")){
                     desc = descInputLayout.getEditText().getText().toString();
+                    Intent intent = new Intent(SignupDesc.this, SignupOTP.class);
+                    intent.putExtra("shopName", shopName);
+                    intent.putExtra("phone", phone);
+                    intent.putExtra("selectedItem", selectedItem);
+                    intent.putExtra("ownerName", ownerName);
+                    intent.putExtra("location", location);
+                    intent.putExtra("rb", rb);
+                    intent.putExtra("desc", desc);
+                    startActivity(intent);
 
-                    Toast.makeText(SignupDesc.this, "Got everything", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(SignupDesc.this, "Not part of this thing", Toast.LENGTH_SHORT).show();
+                    desc = descInputLayout.getEditText().getText().toString();
+                    Intent intent = new Intent(SignupDesc.this, SignupOTP.class);
+                    intent.putExtra("shopName", shopName);
+                    intent.putExtra("phone", phone);
+                    intent.putExtra("selectedItem", selectedItem);
+                    intent.putExtra("ownerName", ownerName);
+                    intent.putExtra("location", location);
+                    intent.putExtra("rb", rb);
+                    intent.putExtra("desc", "");
+                    startActivity(intent);
+
                 }
             }
         });
