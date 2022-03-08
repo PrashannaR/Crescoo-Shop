@@ -182,7 +182,6 @@ public class SignupOTP extends AppCompatActivity {
 
     private void sendData() {
         reference = rootNode.getReference("shops");
-
         Constructor constructor = new Constructor(shopName, phone, ownerName, selectedItem, location, rb, desc);
         reference.child(phone).setValue(constructor);
     }
