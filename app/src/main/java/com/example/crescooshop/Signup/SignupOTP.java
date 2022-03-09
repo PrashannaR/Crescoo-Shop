@@ -134,6 +134,7 @@ public class SignupOTP extends AppCompatActivity {
 
                                     sendData();
                                     Intent intent = new Intent(SignupOTP.this, Inventory.class);
+                                    intent.putExtra("phone", phone);
                                     startActivity(intent);
                                     finishAffinity();
                                 }else {

@@ -33,13 +33,16 @@ public class Billing extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), Profile.class);
                         //intent.putExtra("phone", phone);
                         startActivity(intent);
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.bill:
+                        finish();
                         return true;
                     case R.id.inventory:
                         Intent intentTwo = new Intent(getApplicationContext(), Inventory.class);
                         startActivity(intentTwo);
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                 }

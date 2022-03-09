@@ -73,7 +73,7 @@ public class LoginOTP extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if(task.isSuccessful()){
                                     Intent intent = new Intent(LoginOTP.this, Inventory.class);
-                                   // intent.putExtra("phone", uPhone);
+                                    intent.putExtra("phone", uPhone);
                                     startActivity(intent);
                                     finishAffinity();
                                 }else {

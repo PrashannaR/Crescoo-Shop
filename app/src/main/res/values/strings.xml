@@ -27,7 +27,6 @@
     <string name="_69">69</string>
     <string name="shop_name">Shop Name</string>
     <string name="shop_location">Shop Location</string>
-    <string name="shop_type">Shop Type</string>
     <string name="is_this_a_franchise_company">Is this a Franchise Company?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -39,4 +38,12 @@
     <string name="Inventory">Inventory</string>
     <string name="profile">Profile</string>
     <string name="billing">Billing</string>
+    <string name="logout">Logout</string>
+    <string name="shop_owner">Shop Owner</string>
+    <string name="location">Location</string>
+    <string name="shop_type">Shop Type</string>
+    <string name="franchise_yes">Franchise: Yes</string>
+    <string name="pitch">Pitch:</string>
+    <string name="desc">Desc</string>
+    <string name="edit_icon">edit icon</string>
 </resources>

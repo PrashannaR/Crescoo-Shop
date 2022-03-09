@@ -13,11 +13,18 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Inventory extends AppCompatActivity {
 
+    public String phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
+
+        //get Value
+        Intent intent = getIntent();
+        phone = intent.getStringExtra("phone");
+
 
         //navBar
         BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
@@ -30,15 +37,19 @@ public class Inventory extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.profile:
                         Intent intent = new Intent(getApplicationContext(), Profile.class);
+                        intent.putExtra("phone", phone);
                         startActivity(intent);
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                     case R.id.inventory:
+                        finish();
                         return true;
                     case R.id.bill:
                         Intent intentTwo = new Intent(getApplicationContext(), Billing.class);
                         startActivity(intentTwo);
                         overridePendingTransition(0,0);
+                        finish();
                         return true;
                 }
                 return false;
