@@ -36,4 +36,7 @@
     <string name="sampleText2">Do you want to sign up for this?</string>
     <string name="send_otp">Send OTP</string>
     <string name="description">Description</string>
+    <string name="Inventory">Inventory</string>
+    <string name="profile">Profile</string>
+    <string name="billing">Billing</string>
 </resources>

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrescooShop">
         <activity
+            android:name=".Activities.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.Billing"
+            android:exported="false" />
+        <activity
             android:name=".Signup.SignupDesc"
             android:exported="false" />
         <activity
@@ -28,7 +34,7 @@
             android:name=".Login.LoginPhone"
             android:exported="false" />
         <activity
-            android:name=".Activities.Home"
+            android:name=".Activities.Inventory"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

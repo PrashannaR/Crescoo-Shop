@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.crescooshop.Activities.Home;
+import com.example.crescooshop.Activities.Inventory;
 import com.example.crescooshop.Constructor.Constructor;
 import com.example.crescooshop.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -107,7 +107,7 @@ public class SignupOTP extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             sendData();
-                            Intent intent = new Intent(SignupOTP.this, Home.class);
+                            Intent intent = new Intent(SignupOTP.this, Inventory.class);
                             startActivity(intent);
                             finishAffinity();
                         }else {
@@ -133,7 +133,7 @@ public class SignupOTP extends AppCompatActivity {
                                 if (task.isSuccessful()) {
 
                                     sendData();
-                                    Intent intent = new Intent(SignupOTP.this, Home.class);
+                                    Intent intent = new Intent(SignupOTP.this, Inventory.class);
                                     startActivity(intent);
                                     finishAffinity();
                                 }else {

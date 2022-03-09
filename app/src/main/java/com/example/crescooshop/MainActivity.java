@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.crescooshop.Activities.Home;
+import com.example.crescooshop.Activities.Inventory;
 import com.example.crescooshop.Signup.SignupOne;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(MainActivity.this, Home.class);
+                    Intent intent = new Intent(MainActivity.this, Inventory.class);
                     intent.putExtra("phone", phone);
                     startActivity(intent);
                     finish();
