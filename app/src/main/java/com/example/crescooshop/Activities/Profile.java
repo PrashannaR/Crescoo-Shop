@@ -53,6 +53,9 @@ public class Profile extends AppCompatActivity {
         Intent intent = getIntent();
         phone = intent.getStringExtra("phone");
 
+        Intent intentTwo = getIntent();
+        phone = intentTwo.getStringExtra("phone");
+
 
         //navBar
         BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
@@ -66,7 +69,7 @@ public class Profile extends AppCompatActivity {
                     case R.id.inventory:
                         // startActivity(new Intent(getApplicationContext(), Profiles.class));
                         Intent intent = new Intent(getApplicationContext(), Inventory.class);
-                        //intent.putExtra("phone", phone);
+                        intent.putExtra("phone", phone);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         finish();
@@ -76,6 +79,7 @@ public class Profile extends AppCompatActivity {
                         return true;
                     case R.id.bill:
                         Intent intentTwo = new Intent(getApplicationContext(), Billing.class);
+                        intentTwo.putExtra("phone", phone);
                         startActivity(intentTwo);
                         overridePendingTransition(0,0);
                         finish();
@@ -91,7 +95,7 @@ public class Profile extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent1 = new Intent(Profile.this, SignupOne.class);
-                startActivity(intent);
+                startActivity(intent1);
                 finish();
             }
         });

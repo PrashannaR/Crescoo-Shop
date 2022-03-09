@@ -13,11 +13,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Billing extends AppCompatActivity {
 
+    public String phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_billing);
+
+        //get value
+        Intent intent = getIntent();
+        phone = intent.getStringExtra("phone");
+
+        Intent intentTwo = getIntent();
+        phone = intentTwo.getStringExtra("phone");
 
         //navBar
         BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);
@@ -29,9 +37,8 @@ public class Billing extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.profile:
-                        // startActivity(new Intent(getApplicationContext(), Profiles.class));
                         Intent intent = new Intent(getApplicationContext(), Profile.class);
-                        //intent.putExtra("phone", phone);
+                        intent.putExtra("phone", phone);
                         startActivity(intent);
                         finish();
                         overridePendingTransition(0,0);
@@ -41,6 +48,7 @@ public class Billing extends AppCompatActivity {
                         return true;
                     case R.id.inventory:
                         Intent intentTwo = new Intent(getApplicationContext(), Inventory.class);
+                        intentTwo.putExtra("phone", phone);
                         startActivity(intentTwo);
                         finish();
                         overridePendingTransition(0,0);

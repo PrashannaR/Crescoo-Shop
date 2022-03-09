@@ -21,9 +21,12 @@ public class Inventory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
 
-        //get Value
+        //get value
         Intent intent = getIntent();
         phone = intent.getStringExtra("phone");
+
+        Intent intentTwo = getIntent();
+        phone = intentTwo.getStringExtra("phone");
 
 
         //navBar
@@ -47,6 +50,7 @@ public class Inventory extends AppCompatActivity {
                         return true;
                     case R.id.bill:
                         Intent intentTwo = new Intent(getApplicationContext(), Billing.class);
+                        intentTwo.putExtra("phone", phone);
                         startActivity(intentTwo);
                         overridePendingTransition(0,0);
                         finish();
