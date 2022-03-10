@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrescooShop">
         <activity
+            android:name=".Activities.EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.LoginOrSignUp"
+            android:exported="false" />
+        <activity
             android:name=".Activities.Profile"
             android:exported="false" />
         <activity

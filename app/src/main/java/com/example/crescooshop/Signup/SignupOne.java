@@ -59,6 +59,7 @@ public class SignupOne extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SignupOne.this, LoginPhone.class);
                 startActivity(intent);
+                finish();
             }
         });
 

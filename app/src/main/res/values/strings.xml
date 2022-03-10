@@ -46,4 +46,7 @@
     <string name="pitch">Pitch:</string>
     <string name="desc">Desc</string>
     <string name="edit_icon">edit icon</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="changed_your_mind_for_this_idea">Changed Your Mind For this Idea?</string>
+    <string name="update">Update</string>
 </resources>

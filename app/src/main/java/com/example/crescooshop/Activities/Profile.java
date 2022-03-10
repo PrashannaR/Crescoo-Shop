@@ -56,6 +56,22 @@ public class Profile extends AppCompatActivity {
         Intent intentTwo = getIntent();
         phone = intentTwo.getStringExtra("phone");
 
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Profile.this, EditProfile.class);
+                intent.putExtra("phone", phone);
+                intent.putExtra("shopName", nameTV.getText().toString());
+                intent.putExtra("ownerName", shopTV.getText().toString());
+                intent.putExtra("location", locationTV.getText().toString());
+                intent.putExtra("shopType", shopTypeTV.getText().toString());
+                intent.putExtra("franchise", franchiseTV.getText().toString());
+                intent.putExtra("desc", descTV.getText().toString());
+                startActivity(intent);
+
+            }
+        });
+
 
         //navBar
         BottomNavigationView bottomNavigationView = findViewById(R.id.navBar);

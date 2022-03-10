@@ -84,6 +84,7 @@ public class LoginPhone extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignupOne.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
