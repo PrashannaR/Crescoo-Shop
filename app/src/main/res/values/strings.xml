@@ -49,4 +49,10 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="changed_your_mind_for_this_idea">Changed Your Mind For this Idea?</string>
     <string name="update">Update</string>
+    <string name="add_item">Add Item</string>
+    <string name="view">View</string>
+    <string name="product_name">Product Name</string>
+    <string name="quantity">Quantity</string>
+    <string name="cost_price_per_quantity">Cost Price Per Quantity</string>
+    <string name="selling_price_per_quantity">Selling Price Per Quantity</string>
 </resources>
