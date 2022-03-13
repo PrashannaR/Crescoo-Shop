@@ -1,9 +1,16 @@
 package com.example.crescooshop.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,9 +25,17 @@ import com.example.crescooshop.R;
 import com.example.crescooshop.Signup.SignupDesc;
 import com.example.crescooshop.Signup.SignupOTP;
 import com.example.crescooshop.Signup.SignupTwo;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class EditProfile extends AppCompatActivity {
 
@@ -31,9 +46,10 @@ public class EditProfile extends AppCompatActivity {
     RadioButton radioButton, radioButtonOne;
 
     public String phone, ShopName, ownerName, location, shopType, franchise, selectedItem, rbValue, desc, rbValueOne;
-    public String  uShopName, uOwnerName, uLocation, uFranchise, uDesc;
+    public String  uShopName, uOwnerName, uLocation, uFranchise, uDesc, myLocation;
 
     DatabaseReference reference;
+    FusedLocationProviderClient fusedLocationProviderClient;
 
 
     @Override
@@ -66,6 +82,9 @@ public class EditProfile extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("shops");
 
         dropdown_menu = findViewById(R.id.dropdown_menu);
+
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        checkLocationPermission();
 
 
         //dropdown
@@ -130,7 +149,7 @@ public class EditProfile extends AppCompatActivity {
                     reference.child(phone).child("desc").setValue(uDesc);
                     reference.child(phone).child("franchise").setValue(uFranchise);
                     reference.child(phone).child("ownerName").setValue(uOwnerName);
-                    reference.child(phone).child("shopLocation").setValue(uLocation);
+                    reference.child(phone).child("shopLocation").setValue(myLocation);
                     reference.child(phone).child("shopName").setValue(uShopName);
                     reference.child(phone).child("shopType").setValue(selectedItem);
 
@@ -138,7 +157,7 @@ public class EditProfile extends AppCompatActivity {
                     reference.child(phone).child("desc").setValue("");
                     reference.child(phone).child("franchise").setValue(uFranchise);
                     reference.child(phone).child("ownerName").setValue(uOwnerName);
-                    reference.child(phone).child("shopLocation").setValue(uLocation);
+                    reference.child(phone).child("shopLocation").setValue(myLocation);
                     reference.child(phone).child("shopName").setValue(uShopName);
                     reference.child(phone).child("shopType").setValue(selectedItem);
 
@@ -152,7 +171,39 @@ public class EditProfile extends AppCompatActivity {
         });
 
 
-
-
     }
+
+    private void checkLocationPermission() {
+        if (ActivityCompat.checkSelfPermission(EditProfile.this,
+                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
+                    Location loc = task.getResult();
+                    if(loc != null){
+                        Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.getDefault());
+                        List<Address> addresses = null;
+                        try {
+                            addresses = geocoder.getFromLocation(
+                                    loc.getLatitude(), loc.getLongitude(),1);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        //gets the address in non longitudinal/latitudinal form
+                        myLocation = addresses.get(0).getAddressLine(0);
+                        locationInputLayout.getEditText().setText(myLocation);
+
+
+                    }
+                }
+            });
+
+
+        } else {
+            ActivityCompat.requestPermissions(EditProfile.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 444);
+        }
+    }
+
 }
