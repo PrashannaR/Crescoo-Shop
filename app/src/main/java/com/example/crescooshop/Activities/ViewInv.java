@@ -26,10 +26,7 @@ public class ViewInv extends AppCompatActivity {
     public String phone;
 
     RecyclerView recyclerView;
-    DatabaseReference reference;
     InventoryAdapter inventoryAdapter;
-    ArrayList<addItemConstructor> list;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +42,8 @@ public class ViewInv extends AppCompatActivity {
         recyclerView = findViewById(R.id.inv_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
+        //get values from firebase
         FirebaseRecyclerOptions<addItemConstructor> options =
                 new FirebaseRecyclerOptions.Builder<addItemConstructor>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("shops").child(phone).child("Inventory"), addItemConstructor.class)
@@ -55,35 +54,6 @@ public class ViewInv extends AppCompatActivity {
         recyclerView.setAdapter(inventoryAdapter);
 
 
-
-
-
-
-
-//        recyclerView = findViewById(R.id.inv_list);
-//        reference = FirebaseDatabase.getInstance().getReference(phone);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//        list = new ArrayList<>();
-//        inventoryAdapter = new InventoryAdapter(this, list);
-//        recyclerView.setAdapter(inventoryAdapter);
-//
-//        reference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                    addItemConstructor addItemConstructor = dataSnapshot.getValue(com.example.crescooshop.Constructor.addItemConstructor.class);
-//                    list.add(addItemConstructor);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
     }
 
     @Override

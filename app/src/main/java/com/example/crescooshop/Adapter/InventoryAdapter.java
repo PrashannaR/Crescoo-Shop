@@ -18,12 +18,7 @@ import java.util.ArrayList;
 
 public class InventoryAdapter extends FirebaseRecyclerAdapter<addItemConstructor, InventoryAdapter.myViewHolder> {
 
-    /**
-     * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
-     * {@link FirebaseRecyclerOptions} for configuration options.
-     *
-     * @param options
-     */
+
     public InventoryAdapter(@NonNull FirebaseRecyclerOptions<addItemConstructor> options) {
         super(options);
     }
@@ -65,78 +60,3 @@ public class InventoryAdapter extends FirebaseRecyclerAdapter<addItemConstructor
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.MyViewHolder> {
-//
-//    Context context;
-//    ArrayList<addItemConstructor> list;
-//
-//    public InventoryAdapter(Context context, ArrayList<addItemConstructor> list) {
-//        this.context = context;
-//        this.list = list;
-//    }
-//
-//    @NonNull
-//    @Override
-//    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//        View v = LayoutInflater.from(context).inflate(R.layout.inventory_list, parent, false);
-//        return new MyViewHolder(v);
-//
-//    }
-//
-//    @Override
-//    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-//
-//        addItemConstructor addItemConstructor = list.get(position);
-//        holder.prodNameTV.setText(addItemConstructor.getProdName());
-//        holder.quantityTV.setText(addItemConstructor.getQuantity());
-//        holder.cpTV.setText(addItemConstructor.getCp());
-//        holder.spTV.setText(addItemConstructor.getSp());
-//
-//    }
-//
-//    @Override
-//    public int getItemCount() {
-//        return list.size();
-//    }
-//
-//    public static class MyViewHolder extends  RecyclerView.ViewHolder{
-//
-//        TextView prodNameTV, quantityTV, cpTV, spTV;
-//
-//        public MyViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//
-//            prodNameTV = itemView.findViewById(R.id.prodNameTV);
-//            quantityTV = itemView.findViewById(R.id.quantityTV);
-//            cpTV = itemView.findViewById(R.id.cpTV);
-//            spTV = itemView.findViewById(R.id.spTV);
-//        }
-//    }
-//}
